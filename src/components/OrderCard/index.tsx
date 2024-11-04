@@ -2,18 +2,105 @@ import './styles.scss';
 import {Item} from "../../types/item";
 import {useStoreActions, useStoreState} from "../../store/hooks";
 import { BsTrash3Fill } from "react-icons/bs";
+import { Order } from '../../types/order';
+import { v4 as uuidv4} from 'uuid';
+import Swal from 'sweetalert2';
 
 export const OrderCard = () => {
     const items: Item[] = useStoreState((state) => state.items);
     const totalPrice: number = useStoreState((state) => state.totalPrice);
+
     const removeItem = useStoreActions((actions) => actions.removeItem);
     const updateItem = useStoreActions((actions) => actions.updateItem);
-
-
+    const clearOrder = useStoreActions((actions) => actions.clearOrder);
+    const saveOrder = useStoreActions((actions) => actions.saveOrder)
 
     const handleQuantityChange = (item: Item, quantity: number) => {
         item.quantity = quantity;
         updateItem(item,);
+    }
+
+    const handleRemoveItemByOrder = async (item: Item) => {
+        const Toast = Swal.mixin({
+			toast: true,
+			position: "top-end",
+			showConfirmButton: false,
+			timer: 3000,
+			timerProgressBar: true,
+			didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "success",
+            title: "O item foi removido do pedido com sucesso."
+        });
+        removeItem(item);
+    }
+
+    const handleCancelOrder = async () => {
+        if (!items.length) {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "error",
+                title: "Não há nenhum item no seu carrinho."
+            });
+            return;
+        }
+        const { value: accept } = await Swal.fire({
+            title: 'Você tem certeza?',
+            text: 'Você tem certeza que deseja remover todos os itens do carrinho?',
+            icon: 'warning',
+            confirmButtonColor: "#99582a",
+            reverseButtons: true,
+            showCancelButton: true,
+            focusConfirm: true,
+
+        });
+        if (accept) {
+            Swal.fire({
+                text: "O carrinho foi esvaziado.",
+                confirmButtonColor: "#99582a"
+            })
+            clearOrder();
+        }
+    }
+
+    const handleSaveOrder = async (items: Item[]) => {
+        const order: Order = {
+            id: uuidv4(),
+            items: items,
+            totalPrice: totalPrice,
+        }
+        saveOrder(order);
+        const { value: accept } = await Swal.fire({
+            title: 'Confirmar pedido?',
+            text: 'Você deseja confirmar o pedido?',
+            icon: 'question',
+            confirmButtonColor: "#99582a",
+            reverseButtons: true,
+            showCancelButton: true,
+            focusConfirm: true,
+
+        });
+        if (accept) {
+            Swal.fire({
+                text: "O pedido foi realizado com sucesso.",
+                confirmButtonColor: "#99582a"
+            });
+            clearOrder();
+        }
     }
 
     return (
@@ -56,7 +143,7 @@ export const OrderCard = () => {
                             <td className='table-body-item'>RS: {item.product.price.toFixed(2)}</td>
                             <td className='table-body-item'>RS: {(item.product.price * item.quantity).toFixed(2)}</td>
                             <td className='table-body-item'>
-                                <button className="btn-remove" onClick={() => removeItem(item)}>
+                                <button className="btn-remove" onClick={() => handleRemoveItemByOrder(item)}>
                                     <BsTrash3Fill color='#ff0000' className='icon' />
                                 </button>
                             </td>
@@ -71,8 +158,13 @@ export const OrderCard = () => {
                     <span className='order-total'>{totalPrice.toFixed(2)}</span>
                 </div>
                 <div className='btn-container'>
-                    <button className='btn-save'>Cancelar</button>
-                    <button className='btn-save'>Finalizar Pedido!</button>
+                    <button 
+                        className='btn-cancel'
+                        onClick={handleCancelOrder}>Cancelar</button>
+                    <button 
+                        className='btn-save'
+                        disabled={items.length == 0}
+                        onClick={() => handleSaveOrder(items)}>Finalizar Pedido!</button>
                 </div>
             </div>
         </section>

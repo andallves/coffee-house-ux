@@ -1,5 +1,6 @@
 import {Action, Thunk} from "easy-peasy";
 import { Item } from "../../types/item";
+import { Order } from "../../types/order";
 
 
 export interface IOrder {
@@ -7,9 +8,9 @@ export interface IOrder {
 	totalPrice: number;
 	addItem: Action<this, Item>;
 	removeItem: Action<this, Item>;
-	removeAllItem: Action<this>;
 	updateItem: Action<this, Item>;
-	saveItem: Thunk<this, Item>;
+	clearOrder: Action<this>;
+	saveOrder: Thunk<this, Order>;
 }
 
 export type StoreModel = IOrder
