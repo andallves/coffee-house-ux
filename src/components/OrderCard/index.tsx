@@ -92,7 +92,7 @@ export const OrderCard = () => {
                 </div>
                 <div className='btn-container'>
                     <button 
-                        className='btn-save'
+                        className='btn-cancel'
                         onClick={handleCancelOrder}>Cancelar</button>
                     <button 
                         className='btn-save'

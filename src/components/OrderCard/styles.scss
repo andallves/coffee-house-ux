@@ -190,14 +190,34 @@
             gap: 1.4rem;
             z-index: 10;;
 
-            .btn-save {
+            > button {
                 padding: 1rem 1.2rem;
-                background-color: var(--chocolate);
                 color: var(--text-light);
                 border: none;
                 border-radius: 1rem;
                 font-size: 1.6rem;
                 cursor: pointer;
+                transition: all .3s ease;
+                
+                &.btn-save {
+                    background-color: var(--chocolate);
+
+                    &:hover {
+                        background-color: var(--dark-red);
+                        box-shadow: 0 0 1rem .1rem rgba(0,0,0,.3);
+                    }
+                }
+
+                &.btn-cancel {
+                    background-color: var(--white-ice);
+                    color: var(--dark-red);
+                    border: 1px solid var(--dark-red);
+
+                    &:hover {
+                        background-color: var(--text-gray-300);
+                        box-shadow: 0 0 1rem .1rem rgba(0,0,0,.3);
+                    }
+                }
 
             }
         }
