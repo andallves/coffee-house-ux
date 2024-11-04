@@ -71,7 +71,7 @@
         font-family: var(--font-default), sans-serif;
         font-size: 3vw;
         color: var(--areia);
-        text-shadow: 0 .1rem 1rem var(--text-dark);
+        text-shadow: 0 0 .4rem rgba(0,0,0,0.9);
         z-index: 3;
 
         @media (min-width: 467px) {
