@@ -1,7 +1,6 @@
 import {action, thunk} from 'easy-peasy';
 import {IOrder} from "../interface";
 import axios from "axios";
-import {Item} from "../../types/item.ts";
 import { Order } from '../../types/order.ts';
 
 const order: IOrder = {
