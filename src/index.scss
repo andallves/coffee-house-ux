@@ -1,0 +1,43 @@
+:root {
+  font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  --yellow-light: #faedcd;
+  --chocolate: #99582a;
+  --brown: #432818;
+  --areia: #bb9457;
+  --dark-red: #6f1d1b;
+  --white-ice: #edede9;
+
+  --text-light: #fff;
+  --text-dark: #1e1e1e;
+  --text-gray: #919191;
+
+  --font-logo: "Galada";
+  --font-default: "Poppins";
+  --font-secondary: "Karla";
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+html, body {
+  width: 100%;
+}
+
+
+body {
+  min-width: 37.7rem;
+  background-color: var(--brown);
+}
+

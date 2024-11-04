@@ -1,0 +1,205 @@
+.order-container {
+    height: 80vh;
+    width: 35vw;
+    background-color: var(--yellow-light);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem 2rem;
+    gap: 3rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 0.6rem .078rem rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    
+    article {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .order-title {
+            font-family: var(--font-logo), sans-serif;
+            font-size: 3.5vw;
+            align-self: center;
+            text-transform: uppercase;
+        }
+
+        .table {
+            width: 100%;
+            max-height: 48vh;
+            border-radius: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding: 1rem 1.3rem;
+            color: #1a1a1a;
+            box-shadow: 0 0 0.6rem .078rem rgba(0, 0, 0, 0.2);
+            font-family: var(--font-secondary), sans-serif;
+            overflow-y: auto;
+            table-layout: fixed; // Define layout fixo para ajustar larguras
+            border-collapse: collapse;
+            
+            .table-header-row,
+            .table-body-row {
+                text-align: left;
+                font-weight: bold;
+            }
+
+            th,
+            td {
+                padding: 8px;
+                text-align: center;
+                overflow: hidden;
+                white-space: nowrap; 
+                text-overflow: ellipsis;
+            }
+
+            // Ajusta as larguras para caber o conteúdo
+            .table-header-title:nth-child(1),
+            .table-body-item:nth-child(1) {
+                width: 5%; // Coluna de índice
+            }
+
+            .table-header-title:nth-child(2),
+            .table-body-item:nth-child(2) {
+                width: 25%; // Coluna de descrição
+            }
+
+            .table-header-title:nth-child(3),
+            .table-body-item:nth-child(3) {
+                width: 10%; // Coluna de quantidade
+            }
+
+            .table-header-title:nth-child(4),
+            .table-body-item:nth-child(4) {
+                width: 20%; // Coluna de valor unitário
+            }
+
+            .table-header-title:nth-child(5),
+            .table-body-item:nth-child(5) {
+                width: 20%; // Coluna de valor total
+            }
+
+            .table-header-title:nth-child(6),
+            .table-body-item:nth-child(6) {
+                width: 10%; // Coluna de ação
+            }
+
+            > thead {
+                width: 100%;
+
+                .table-header-row {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: .4rem 0;
+                    border-bottom: 1px solid var(--chocolate);
+                    gap: 3rem;
+
+                    .table-header-title {
+                        font-size: 1vw;
+                        font-family: var(--font-secondary), sans-serif;
+                        font-weight: bolder;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+            > tbody  {
+                width: 100%;
+
+                .table-body-row {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: .4rem 0;
+
+                    &.table-body-empty {
+                        justify-content: center;
+                    }
+
+                    .without-item {
+                        font-size: 1.4rem;
+                        align-self: center;
+                    }
+
+                    .table-body-item {
+                        font-size: 1.4rem;
+
+                        .input-quantity {
+                            width: 5rem;
+                            font-size: 1.4rem;
+                            padding: 1rem;
+                            background-color: transparent;
+                            border: none;
+                            outline: none;
+                            text-align: center;
+                        }
+                    }
+
+                    .btn-remove {
+                        width: 100%;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+
+                        > .icon{
+                            fill: #ff0000;
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
+
+    }   
+    .order-footer {
+        width: 100%;
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .order-price {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            gap: 1rem;
+
+            .order-total {
+                font-size: 1.6rem;
+                align-self: flex-end;
+                font-weight: bold;
+            }
+        }
+    
+
+        .btn-container {
+            position: sticky;
+        
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: end;
+            gap: 1.4rem;
+            z-index: 10;;
+
+            .btn-save {
+                padding: 1rem 1.2rem;
+                background-color: var(--chocolate);
+                color: var(--text-light);
+                border: none;
+                border-radius: 1rem;
+                font-size: 1.6rem;
+                cursor: pointer;
+
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.footer {
+    height: 10vh;
+    width: 100%;
+    background-color: var(--yellow-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    > span {
+        font-family: var(--font-secondary), sans-serif;
+        font-weight: bold;
+        font-size: 1.5vw;
+    }
+}
+
