@@ -3,7 +3,7 @@ import './styles.scss';
 export const Header = () => {
 	return (
 		<header className='header-container'>
-			<h1 className='header-title'>Coffee Shop</h1>
+			<h1 className='header-title'>Coffee House</h1>
 			<div className='header-divider'>
 				<img src='img/divider.png' alt='divisor'/>
 			</div>
