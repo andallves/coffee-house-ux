@@ -1,10 +1,19 @@
 # Coffee House
 
-**Descrição:** Uma breve introdução ao projeto, o propósito e as principais funcionalidades. Por exemplo:
+<h1 align="center" >Coffee House</h1>
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+
+**Descrição:** Uma breve introdução ao projeto, o propósito e as principais funcionalidades. 
 
 > "Este é um projeto de um menu de uma cafeteteria onde os usuários podem visualizar produtos, adicionar itens ao carrinho e finalizar pedidos. Utilizamos React com TypeScript para a interface, Easy-Peasy para gerenciar o estado global e Axios para requisições à API."
 
-## Índice
+## 📎 Índice
 2. [Tecnologias Utilizadas](#tecnologias-utilizadas)
 3. [Pré-requisitos](#pré-requisitos)
 4. [Instalação](#instalacao)
@@ -13,17 +22,17 @@
 7. [Funcionalidades](#funcinalidades)
 8. [Licença](#licenca)
 
-## Tecnologias Utilizadas
+## 💻 Tecnologias Utilizadas
 - **React**: Biblioteca para construção de interfaces de usuário.
 - **TypeScript:** Superset de JavaScript que adiciona tipagem estática.
 - **Easy-Peasy:** Biblioteca para gerenciamento de estado global, simplificando a estrutura e ações.
 - **Axios:** Cliente HTTP para realizar requisições à API.
-## Pré-requisitos
+## 📃 Pré-requisitos
 Antes de começar, você vai precisar ter as seguintes ferramentas instaladas:
 
 - Node.js (versão mínima recomendada: 20.x)
 - npm ou yarn (gerenciador de pacotes)
-## Instalação
+## 🔧 Instalação
 1. Clone o repositório:
 
 ```bash
@@ -35,7 +44,7 @@ Antes de começar, você vai precisar ter as seguintes ferramentas instaladas:
 ```bash
   npm install
 ```
-\# ou, se estiver usando yarn: 
+ou, se estiver usando yarn: 
 
 ```bash
   yarn install
@@ -65,7 +74,7 @@ yarn build
 ```
 Os arquivos de build estarão na pasta build.
 
-## Estrutura do Projeto
+## 💠 Estrutura do Projeto
 Aqui está uma visão geral da estrutura do projeto, com uma breve descrição das pastas e arquivos principais.
 
 ```bash
@@ -99,5 +108,19 @@ Aqui está uma visão geral da estrutura do projeto, com uma breve descrição d
 - **Gerenciamento de Estado com Easy-Peasy:** Controle centralizado do estado global.
 - **Chamadas de API com Axios:** Conexão com backend usando HTTP requests.
 
-## Licença
+
+## 🪪 Licença
 Este projeto é licenciado sob a licença MIT. Para mais detalhes, consulte o arquivo LICENSE.
+
+## 👨🏽‍💻 Author
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/37510133?v=4" width="100px;" alt="Andre Alves Profile Picture"/><br>
+        <sub>
+          <b>Andre Alves Pereira</b>
+        </sub>
+      </a>
+    </td>
+</table>
