@@ -15,9 +15,9 @@
 
 ## Tecnologias Utilizadas
 - **React**: Biblioteca para construção de interfaces de usuário.
--  **TypeScript:** Superset de JavaScript que adiciona tipagem estática.
--  **Easy-Peasy:** Biblioteca para gerenciamento de estado global, simplificando a estrutura e ações.
--  **Axios:** Cliente HTTP para realizar requisições à API.
+- **TypeScript:** Superset de JavaScript que adiciona tipagem estática.
+- **Easy-Peasy:** Biblioteca para gerenciamento de estado global, simplificando a estrutura e ações.
+- **Axios:** Cliente HTTP para realizar requisições à API.
 ## Pré-requisitos
 Antes de começar, você vai precisar ter as seguintes ferramentas instaladas:
 
@@ -44,12 +44,11 @@ Antes de começar, você vai precisar ter as seguintes ferramentas instaladas:
 1. Executar o projeto em desenvolvimento:
 
 ```bash
-Copy code
 npm start
-ou com yarn:
 ```
+ou com yarn:
+
 ```bash
-Copy code
 yarn start
 ```
 O projeto estará disponível em http://localhost:3000.
@@ -69,8 +68,6 @@ Os arquivos de build estarão na pasta build.
 ## Estrutura do Projeto
 Aqui está uma visão geral da estrutura do projeto, com uma breve descrição das pastas e arquivos principais.
 
-graphql
-Copy code
 ```bash
 .
 ├── public              # Recursos
