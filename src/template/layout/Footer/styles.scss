@@ -1,15 +1,34 @@
 .footer {
-    height: 10vh;
+    height: 5rem;
     width: 100%;
-    background-color: var(--yellow-light);
+    background-color: var(--brown);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .3s ease-in-out;
+
+    @media (min-width: 768px) {
+        height: 20vh;
+    }
     
     > span {
         font-family: var(--font-secondary), sans-serif;
-        font-weight: bold;
-        font-size: 1.5vw;
+        font-weight: 400;
+        font-size: 2.5vw;
+        color: var(--text-light);
+        text-shadow: 0 0 .1rem rgba(0,0,0,0.2);
+
+        @media (min-width: 568px) {
+            font-size: 2vw;
+        }
+
+        @media (min-width: 798px) {
+            font-size: 1.5vw;
+        }
+
+        @media (min-width: 1198px){
+            font-size: 1vw;
+        }
     }
 }
 
