@@ -51,12 +51,14 @@ export const Menu = () => {
 		<div className='menu-container'>
 			<h3 className='menu-title'>Cardápio</h3>
 			
+			<div className='menu-items'>
 			{products.length > 0 && products.map((product) => (
 				<MenuItem 
 					key={product.id} 
 					product={product} 
 					onClickButton={() => handleClickAddItem(product)}></MenuItem>
 			))}
+			</div>
 		</div>
 	)
 }

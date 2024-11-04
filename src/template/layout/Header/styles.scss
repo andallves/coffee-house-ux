@@ -1,15 +1,22 @@
 .header-container {
     position: relative;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 9rem 20rem;
+    justify-content: center; 
     background-color: var(--chocolate);
     background-image: url("/img/background-header.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-clip: border-box;
     background-size: cover;
+    overflow: hidden;
+    height: 20rem;
+
+    @media (min-width: 768px) {
+        height: 30rem;
+    }
 
 
     &::after {
@@ -18,39 +25,58 @@
         width: 100%;
         height: 100%;
         top: 0;
+        left: 0;
+        right: 0;
         background-color: rgba(0, 0, 0, 0.2);
         z-index: 2;
     }
 
     .header-title {
         font-family: var(--font-logo), cursive;
-        font-size: 7.5vw;
+        font-size: 20vw;
         font-weight: 700;
         color: var(--areia);
         text-shadow: 0 .1rem 0.4rem var(--text-dark);
         z-index: 3;
+        transition: all .3s ease;
+
+        @media (min-width: 467px) {
+            font-size: 13vw;
+        }
+
+        @media (min-width: 768px) {
+            font-size: 10vw;
+        }
+
+        @media (min-width: 976px) {
+            font-size: 8vw;
+        }
     }
 
     .header-divider {
         width: 100%;
-        height: 10vh;
+        height: 3rem;
         display: flex;
         align-items: center;
         z-index: 3;
-
+        
         img {
-            width: 80%;
-            margin: 0 auto;
+            width: 40%;
             z-index: 3;
+            margin: 0 auto;
         }
     }
 
     .header-description {
         font-family: var(--font-default), sans-serif;
-        font-size: 1.4vw;
+        font-size: 3vw;
         color: var(--areia);
         text-shadow: 0 .1rem 1rem var(--text-dark);
         z-index: 3;
+
+        @media (min-width: 467px) {
+            font-size: 2vw;
+        }
     }
 }
 

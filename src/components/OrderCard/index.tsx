@@ -62,29 +62,45 @@ export const OrderCard = () => {
             title: 'Você tem certeza?',
             text: 'Você tem certeza que deseja remover todos os itens do carrinho?',
             icon: 'warning',
+            confirmButtonColor: "#99582a",
+            reverseButtons: true,
             showCancelButton: true,
             focusConfirm: true,
 
         });
         if (accept) {
-            Swal.fire("O carrinho foi esvaziado.");
+            Swal.fire({
+                text: "O carrinho foi esvaziado.",
+                confirmButtonColor: "#99582a"
+            })
             clearOrder();
         }
     }
 
-    const handleSaveOrder = (items: Item[]) => {
+    const handleSaveOrder = async (items: Item[]) => {
         const order: Order = {
             id: uuidv4(),
             items: items,
             totalPrice: totalPrice,
         }
         saveOrder(order);
-        Swal.fire({
-            title: 'Sucesso',
-            text: 'Seu pedido foi realizado com sucesso!',
-            icon: 'success',
+        const { value: accept } = await Swal.fire({
+            title: 'Confirmar pedido?',
+            text: 'Você deseja confirmar o pedido?',
+            icon: 'question',
+            confirmButtonColor: "#99582a",
+            reverseButtons: true,
+            showCancelButton: true,
+            focusConfirm: true,
+
         });
-        clearOrder();
+        if (accept) {
+            Swal.fire({
+                text: "O pedido foi realizado com sucesso.",
+                confirmButtonColor: "#99582a"
+            });
+            clearOrder();
+        }
     }
 
     return (
