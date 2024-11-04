@@ -83,12 +83,10 @@ Aqui está uma visão geral da estrutura do projeto, com uma breve descrição d
 ├── src                 # Código-fonte principal
 │   ├── assets          # Imagens e recursos estáticos
 │   ├── components      # Componentes React reutilizáveis
-│   ├── hooks           # Hooks personalizados
-│   ├── models          # Modelos e tipos do TypeScript
-│   ├── services        # Configuração do Axios para chamadas de API
+│   ├── data            # Dados mocados do projeto
 │   ├── store           # Configuração do Easy-Peasy para gerenciamento de estado
-│   ├── styles          # Arquivos de estilo (CSS/SASS)
-│   ├── utils           # Funções auxiliares e utilitárias
+│   ├── template        # Componentes relacionado ao template da tela
+│   ├── types           # Contem os types
 │   └── App.tsx         # Componente raiz do aplicativo
 ├── README.md           # Documentação do projeto
 └── package.json        # Configurações do projeto e dependências
