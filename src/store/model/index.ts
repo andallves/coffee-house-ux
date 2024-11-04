@@ -2,6 +2,7 @@ import {action, thunk} from 'easy-peasy';
 import {IOrder} from "../interface";
 import axios from "axios";
 import {Item} from "../../types/item.ts";
+import { Order } from '../../types/order.ts';
 
 const order: IOrder = {
 	items: [],
@@ -10,7 +11,6 @@ const order: IOrder = {
 		state.items = [...state.items, payload];
 		state.totalPrice = state.items.reduce((prev, current) => prev + current.product.price * current.quantity, 0)
 	}),
-	
 	updateItem: action((state, payload) => {
 		state.items = state.items.map((item) => {
 			state.totalPrice = state.items.reduce((prev, current) => prev + current.product.price * current.quantity, 0)
@@ -18,23 +18,22 @@ const order: IOrder = {
 			return item;
 		});
 	}),
-	saveItem: thunk(async (actions, payload: Item): Promise<void> => {
+	removeItem: action((state, payload) => {
+		state.items = state.items.filter((item) => item.id !== payload.id);
+		state.totalPrice = state.items.reduce((prev, current) => prev + current.product.price * current.quantity, 0)
+	}),
+	clearOrder: action((state) => {
+		state.items = [];
+		state.totalPrice = state.items.reduce((prev, current) => prev + current.product.price * current.quantity, 0)
+	}),
+	saveOrder: thunk(async (_actions, payload: Order): Promise<void> => {
 		try {
-			const data: Item = await axios.post<Item>('/test', payload).then();
-			actions.addItem(data);
+			await axios.post<Order>('/test', payload).then();
 		}
 		catch {
 			console.log("test")
 		}
 	}),
-	removeItem: action((state, payload) => {
-		state.items = state.items.filter((item) => item.id !== payload.id);
-		state.totalPrice = state.items.reduce((prev, current) => prev + current.product.price * current.quantity, 0)
-	}),
-	removeAllItem: action((state) => {
-		state.items = [];
-		state.totalPrice = state.items.reduce((prev, current) => prev + current.product.price * current.quantity, 0)
-	})
 };
 
 export default order;

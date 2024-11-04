@@ -11,13 +11,15 @@
   --yellow-light: #faedcd;
   --chocolate: #99582a;
   --brown: #432818;
+  --brown-gradient: linear-gradient(to top, #d09a8a 12%, #9f6e48 80%);
   --areia: #bb9457;
   --dark-red: #6f1d1b;
-  --white-ice: #edede9;
+  --white-ice:  linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 
   --text-light: #fff;
   --text-dark: #1e1e1e;
   --text-gray: #919191;
+  --text-gray-300: #eeeeee;
 
   --font-logo: "Galada";
   --font-default: "Poppins";
@@ -28,7 +30,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 62.5%;
 }
 
 html, body {
@@ -38,6 +39,6 @@ html, body {
 
 body {
   min-width: 37.7rem;
-  background-color: var(--brown);
+  background-image: var(--brown-gradient);
 }
 

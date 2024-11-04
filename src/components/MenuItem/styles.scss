@@ -4,14 +4,17 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 1rem 1.3rem;
-  color: #1a1a1a;
-  box-shadow: 0 0 0.6rem .078rem rgba(0, 0, 0, 0.2);
+  padding: 1rem 0.5rem;
+  color: var(--text-gray);
   font-family: var(--font-secondary), sans-serif;
   cursor: pointer;
   background-color: transparent;
   outline: none;
   border: none;
+
+  @media (min-width: 768px) {
+    padding: 1rem 1.2rem;
+  }
 
   &:hover {
     box-shadow: 0 0 0.6rem .09rem rgba(0, 0, 0, 0.28);
@@ -28,19 +31,27 @@
     color: var(--chocolate);
 
     .item-header-title {
-      font-size: 1.4vw;
+      font-size: 1.1rem;
       font-family: var(--font-secondary), sans-serif;
       font-weight: bolder;
       margin: 0;
       padding: 0;
+
+      @media (min-width: 768px) {
+        font-size: 1.4vw;
+      }
     }
 
     .item-header-price {
-      font-size: 1.4vw;
+      font-size: 1.1rem;
       font-family: var(--font-secondary), sans-serif;
       font-weight: bold;
       margin: 0;
       padding: 0;
+
+      @media (min-width: 768px) {
+        font-size: 1.4vw;
+      }
     }
   }
 
@@ -52,7 +63,12 @@
   }
 
   .item-description {
-    font-size: 1.2vw;
+    font-size: 1rem;
     font-family: var(--font-secondary), sans-serif;
+    text-align: start;
+
+    @media (min-width: 768px) {
+      font-size: 1.2vw;
+    }
   }
 }
