@@ -25,6 +25,7 @@
 ## 💻 Tecnologias Utilizadas
 - **React**: Biblioteca para construção de interfaces de usuário.
 - **TypeScript:** Superset de JavaScript que adiciona tipagem estática.
+- **Sweatalert:** Biblioteca para tratamento de respostas ao usuário.
 - **Easy-Peasy:** Biblioteca para gerenciamento de estado global, simplificando a estrutura e ações.
 - **Axios:** Cliente HTTP para realizar requisições à API.
 ## 📃 Pré-requisitos
