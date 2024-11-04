@@ -2,18 +2,38 @@ import './styles.scss';
 import {Item} from "../../types/item";
 import {useStoreActions, useStoreState} from "../../store/hooks";
 import { BsTrash3Fill } from "react-icons/bs";
+import { Order } from '../../types/order';
+import { v4 as uuidv4} from 'uuid';
 
 export const OrderCard = () => {
     const items: Item[] = useStoreState((state) => state.items);
     const totalPrice: number = useStoreState((state) => state.totalPrice);
+
     const removeItem = useStoreActions((actions) => actions.removeItem);
     const updateItem = useStoreActions((actions) => actions.updateItem);
+    const clearOrder = useStoreActions((actions) => actions.clearOrder);
+    const saveOrder = useStoreActions((actions) => actions.saveOrder)
 
 
 
     const handleQuantityChange = (item: Item, quantity: number) => {
         item.quantity = quantity;
         updateItem(item,);
+    }
+
+    const handleCancelOrder = () => {
+        clearOrder();
+    }
+
+    const handleSaveOrder = (items: Item[]) => {
+        const order: Order = {
+            id: uuidv4(),
+            items: items,
+            totalPrice: totalPrice,
+        }
+        alert("Salvou!")
+        saveOrder(order);
+        clearOrder();
     }
 
     return (
@@ -71,8 +91,12 @@ export const OrderCard = () => {
                     <span className='order-total'>{totalPrice.toFixed(2)}</span>
                 </div>
                 <div className='btn-container'>
-                    <button className='btn-save'>Cancelar</button>
-                    <button className='btn-save'>Finalizar Pedido!</button>
+                    <button 
+                        className='btn-save'
+                        onClick={handleCancelOrder}>Cancelar</button>
+                    <button 
+                        className='btn-save'
+                        onClick={() => handleSaveOrder(items)}>Finalizar Pedido!</button>
                 </div>
             </div>
         </section>
